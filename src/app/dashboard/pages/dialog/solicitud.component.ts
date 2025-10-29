@@ -74,7 +74,7 @@ export class AgregarSolicitudDialogComponent implements OnInit {
           .subscribe({
             next: (success) => {
               if (success) {
-                this._snackBar.open('Registro guardado correctamente', 'Cerrar', {
+                this._snackBar.open('Registro actualizado correctamente', 'Cerrar', {
                   duration: 3000,
                   horizontalPosition: 'center',
                   verticalPosition: 'top',

@@ -35,7 +35,7 @@ export class ProductoService {
       Authorization: `Bearer ${token}`
     });
 
-    const url = `${this.baseUrlAdmin}`;
+    const url = `${this.baseUrlAdmin}/productos`;
 
     return this._http.get<Productos>(url, { headers })
       .pipe(
@@ -76,7 +76,7 @@ export class ProductoService {
       stock
     };
 
-    const url = `${this.baseUrlAdmin}`;
+    const url = `${this.baseUrlAdmin}/productos/`;
 
     return this._http.put<boolean>(url, solicitud, { headers }).pipe(
       map((resp) => {
@@ -114,7 +114,7 @@ export class ProductoService {
       stock
     };
 
-    const url = `${this.baseUrlAdmin}`;
+    const url = `${this.baseUrlAdmin}/productos`;
 
     return this._http.post<boolean>(url, solicitud, { headers }).pipe(
       map((resp) => {
@@ -144,7 +144,7 @@ export class ProductoService {
       Authorization: `Bearer ${token}`
     });
 
-    const url = `${this.baseUrlAdmin}/EliminarSolicitudPorUsuario?idSolicitud=${id}&Usuario=${usuario}`;
+    const url = `${this.baseUrlAdmin}/productos/${id}`;
 
     return this._http.delete<boolean>(url, { headers }).pipe(
       map((resp) => {

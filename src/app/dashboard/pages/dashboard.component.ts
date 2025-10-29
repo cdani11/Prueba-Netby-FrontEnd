@@ -15,6 +15,7 @@ import { ProductoService } from '../services/producto.service';
 import { Producto, Categoria, CategoriaDescripcion } from '../interfaces';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NavbarComponent } from "../../shared/navbar/navbar.component";
 
 
 @Component({
@@ -27,8 +28,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatButtonModule,
     MatTableModule,
     MatIconModule,
-    MatProgressBarModule
-  ],
+    MatProgressBarModule,
+    NavbarComponent
+],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -77,7 +79,7 @@ export default class dashboardPageComponent implements OnInit {
       .subscribe({
         next: (success) => {
           if (success) {
-            this._snackBar.open('Registro guardado correctamente', 'Cerrar', {
+            this._snackBar.open('Registro eliminado correctamente', 'Cerrar', {
               duration: 3000,
               horizontalPosition: 'center',
               verticalPosition: 'top',
